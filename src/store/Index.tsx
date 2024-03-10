@@ -1,4 +1,5 @@
 import { create } from "zustand";
+
 export type ConfigType = {
   numberofquestions: number;
   category: { id: number; name: string };
@@ -23,9 +24,9 @@ const useQuiz = create((set) => ({
   addLevel: (level:string) => set((state:ConfigType) => ({ config: {...state.config,level:level}})),
   addNumberOfQuestions: (count:number) => set((state:ConfigType) => ({ config: {...state.config,numberofquestions:count}})),
   addCategory: (id:number,name:string) => set((state:ConfigType) => ({ config: {...state.config,id:id,name:name}})),
-  addStatus: (status:string,name:string) => set((state:ConfigType) => ({ config: {...state.config,status:status}})),
-  addSCore: (score:number) => set((state:ConfigType) => ({ config: {...state.config,score:score}})),
-
+  addStatus: (status:string) => set((state:ConfigType) => ({ config: {...state.config,status:status}})),
+  addScore: (score:number) => set((state:ConfigType) => ({ config: {...state.config,score:score}})),
+  addType: (type:string) => set((state:ConfigType) => ({ config: {...state.config,type:type}}))
 
 
 }));
